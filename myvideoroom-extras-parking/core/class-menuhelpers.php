@@ -38,6 +38,7 @@ class MenuHelpers extends Shortcode {
 		$this->add_shortcode( 'namedump', array( $this, 'name_dump_shortcode' ) );
 		$this->add_shortcode( 'refresh', array( $this, 'refresh' ) );
 		$this->add_shortcode( 'nameformat', array( $this, 'name_format_sc' ) );
+		$this->add_shortcode( 'searchyouzergroups', array( $this, 'search_youzer_groups_shortcode' ) );
 	}
 
 	/**
@@ -739,5 +740,19 @@ class MenuHelpers extends Shortcode {
 		}
 	}
 
+	/**
+	 * A Shortcode to Return Youzer Search
+	 * This is meant to be the new universal formatting invite list
+	 *
+	 * @param  string $params = host.
+	 * @return string - a shortcode search.
+	 */
+	public function search_youzer_groups_shortcode( $params = array() ) {
+		$raw_host = $params['host'] ?? htmlspecialchars( $_GET['s'] ?? '' );
+		$host     = preg_replace( '/[^A-Za-z0-9\-]/', ' ', $raw_host );
+
+		return do_shortcode( '[youzer_members per_page="12" meta_key="_wcfm_vendor"  search_terms ="' . $host . '"]' );
+
+	}
 }
 
