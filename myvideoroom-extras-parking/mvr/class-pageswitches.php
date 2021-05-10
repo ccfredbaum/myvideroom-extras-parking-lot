@@ -154,13 +154,13 @@ class PageSwitches extends Shortcode {
 		for ( $x = 0; $x <= $array_count - 1; $x ++ ) {
 			switch ( $memlev[ $x ] ) {
 				case MembershipLevel::BUSINESS:
-					return $this->get_instance( SectionTemplates::class )->meet_admin_page_template();
+					return $this->get_instance( SectionTemplates::class )->meet_signed_in_page_template();
 				case MembershipLevel::PREMIUM:
-					return $this->get_instance( SectionTemplates::class )->meet_admin_page_template();
+					return $this->get_instance( SectionTemplates::class )->meet_signed_in_page_template();
 				case MembershipLevel::BASIC:
-					return $this->get_instance( SectionTemplates::class )->meet_admin_page_template();
+					return $this->get_instance( SectionTemplates::class )->meet_signed_in_page_template();
 				case MembershipLevel::VENDOR_STAFF:
-					return $this->get_instance( SectionTemplates::class )->meet_admin_page_template();
+					return $this->get_instance( SectionTemplates::class )->meet_signed_in_page_template();
 			}
 		}
 		return null;
