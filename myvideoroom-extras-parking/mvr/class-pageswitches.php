@@ -9,6 +9,7 @@ namespace MyVideoRoomExtrasParking\MVR;
 
 use MyVideoRoomExtrasParking\Core\MenuHelpers;
 use MyVideoRoomExtrasParking\Core\SiteDefaults;
+use MyVideoRoomExtrasParking\Factory;
 use MyVideoRoomExtrasParking\Modules\UltimateMembershipPro\MembershipLevel;
 use \MyVideoRoomExtrasPlugin\Library\UserRoles;
 use \MyVideoRoomExtrasPlugin\Library\SectionTemplates;
@@ -56,19 +57,19 @@ class PageSwitches extends Shortcode {
 		$user_id  = \get_current_user_id();
 		$owner_id = \bp_displayed_user_id();
 
-		$user = \MyVideoRoomExtrasParking\Factory::get_instance( WordPressUser::class )->get_wordpress_user_by_id( (int) $owner_id );
+		$user = Factory::get_instance( WordPressUser::class )->get_wordpress_user_by_id( (int) $owner_id );
 
-		$user_roles = \MyVideoRoomExtrasParking\Factory::get_instance( UserRoles::class, array( $user ) );
+		$user_roles = Factory::get_instance( UserRoles::class, array( $user ) );
 
 		// handle signed out users and return signed out templates.
 		if ( ! \is_user_logged_in() ) {
 
-			if ( \MyVideoRoomExtrasParking\Factory::get_instance( SiteDefaults::class )->is_premium_check( $owner_id ) && ! $user_roles->is_wcfm_shop_staff() ) {
-				$url = \MyVideoRoomExtrasParking\Factory::get_instance( MenuHelpers::class )->get_store_url( (int) $owner_id ) . '/' . \MyVideoRoomExtrasParking\Factory::get_instance( SiteDefaults::class )->defaults( 'video_storefront_slug' );
+			if ( Factory::get_instance( SiteDefaults::class )->is_premium_check( $owner_id ) && ! $user_roles->is_wcfm_shop_staff() ) {
+				$url = Factory::get_instance( MenuHelpers::class )->get_store_url( (int) $owner_id ) . '/' . Factory::get_instance( SiteDefaults::class )->defaults( 'video_storefront_slug' );
 				wp_redirect( $url );
 				exit();
 
-			} elseif ( \MyVideoRoomExtrasParking\Factory::get_instance( SiteDefaults::class )->is_premium_check( $owner_id ) && $user_roles->is_wcfm_shop_staff() ) {
+			} elseif ( Factory::get_instance( SiteDefaults::class )->is_premium_check( $owner_id ) && $user_roles->is_wcfm_shop_staff() ) {
 
 				return do_shortcode( '[elementor-template id="34095"]' );
 			} else {
@@ -76,8 +77,8 @@ class PageSwitches extends Shortcode {
 			}
 		} elseif ( ! $user_roles->is_wcfm_vendor() && ! $user_roles->is_wcfm_shop_staff() ) {
 			// Redirecting to Premium Store for normal users.
-			if ( \MyVideoRoomExtrasParking\Factory::get_instance( SiteDefaults::class )->is_premium_check( $owner_id ) ) {
-				$url = \MyVideoRoomExtrasParking\Factory::get_instance( MenuHelpers::class )->get_store_url( (int) $owner_id ) . '/' . \MyVideoRoomExtrasParking\Factory::get_instance( SiteDefaults::class )->defaults( 'video_storefront_slug' );
+			if ( Factory::get_instance( SiteDefaults::class )->is_premium_check( $owner_id ) ) {
+				$url = Factory::get_instance( MenuHelpers::class )->get_store_url( (int) $owner_id ) . '/' . Factory::get_instance( SiteDefaults::class )->defaults( 'video_storefront_slug' );
 
 				wp_redirect( $url );
 				exit();
@@ -92,7 +93,7 @@ class PageSwitches extends Shortcode {
 		if ( $user_roles->is_wcfm_vendor() || $user_roles->is_wcfm_shop_staff() ) {
 
 			// First Guest Owners who dont own this store (or Staff).
-			if ( $owner_id !== \MyVideoRoomExtrasParking\Factory::get_instance( WCFMHelpers::class )->staff_to_parent( $user_id ) ) {
+			if ( $owner_id !== Factory::get_instance( WCFMHelpers::class )->staff_to_parent( $user_id ) ) {
 				return do_shortcode( '[elementor-template id="34858"]' );
 			} elseif ( $user_id === $owner_id ) {
 
@@ -110,7 +111,7 @@ class PageSwitches extends Shortcode {
 
 						case MembershipLevel::VENDOR_STAFF:
 							// Basic Staff Host template.
-							if ( \MyVideoRoomExtrasParking\Factory::get_instance( SiteDefaults::class )->is_premium_check( $owner_id ) ) {
+							if ( Factory::get_instance( SiteDefaults::class )->is_premium_check( $owner_id ) ) {
 								return do_shortcode( '[elementor-template id="34858"]' );
 							} else {
 								// Upgrade Page as Account Inactive.
@@ -128,7 +129,7 @@ class PageSwitches extends Shortcode {
 			// Deal with Inactive Staff.
 			if (
 				$user_roles->is_wcfm_shop_staff() &&
-				! \MyVideoRoomExtrasParking\Factory::get_instance( SiteDefaults::class )->is_premium_check( \MyVideoRoomExtrasParking\Factory::get_instance( WCFMHelpers::class )->staff_to_parent( $owner_id ) )
+				! Factory::get_instance( SiteDefaults::class )->is_premium_check( Factory::get_instance( WCFMHelpers::class )->staff_to_parent( $owner_id ) )
 			) {
 				// Upgrade Page as Account Inactive.
 				return do_shortcode( ' [elementor-template id="34880"]' );
@@ -142,7 +143,7 @@ class PageSwitches extends Shortcode {
 
 	public function meet_helper( int $user_id ) {
 
-		if ( ! \MyVideoRoomExtrasParking\Factory::get_instance( \MyVideoRoomExtrasParking\Core\SiteDefaults::class )->is_mvr() ) {
+		if ( ! Factory::get_instance( \MyVideoRoomExtrasParking\Core\SiteDefaults::class )->is_mvr() ) {
 			return null;
 		}
 
@@ -191,7 +192,7 @@ class PageSwitches extends Shortcode {
 			}
 		}    //sets default case in case no selection by merchant
 		if ( $membership_block ) {
-			return \MyVideoRoomExtrasParking\Factory::get_instance( \MyVideoRoomExtrasParking\Library\SectionTemplates::class )->mvr_ump_wcfm_upgrade_template();
+			return Factory::get_instance( \MyVideoRoomExtrasParking\Library\SectionTemplates::class )->mvr_ump_wcfm_upgrade_template();
 		} else {
 			return null;
 		}
@@ -200,7 +201,7 @@ class PageSwitches extends Shortcode {
 
 	public function wcfm_membership_upgrade_block() {
 
-		$user_roles = \MyVideoRoomExtrasParking\Factory::get_instance( UserRoles::class );
+		$user_roles = Factory::get_instance( UserRoles::class );
 		if (
 			$user_roles->is_wcfm_vendor() ||
 			$user_roles->is_wcfm_shop_staff() ||
@@ -212,7 +213,7 @@ class PageSwitches extends Shortcode {
 		}
 
 		if ( $membership_block ) {
-			return \MyVideoRoomExtrasParking\Factory::get_instance( \MyVideoRoomExtrasParking\Library\SectionTemplates::class )->mvr_ump_wcfm_upgrade_template();
+			return Factory::get_instance( \MyVideoRoomExtrasParking\Library\SectionTemplates::class )->mvr_ump_wcfm_upgrade_template();
 		} else {
 			return null;
 		}
