@@ -26,7 +26,7 @@ class MVRBuddyPress extends Shortcode {
 	/**
 	 * Install the shortcode
 	 */
-	public function install() {
+	public function runtime() {
 
 		// add_action( 'bp_init', array( $this, 'setup_root_nav_action' ), 1000 );
 		// add_action( 'bp_init', array( $this, 'setup_group_nav_action' ) );

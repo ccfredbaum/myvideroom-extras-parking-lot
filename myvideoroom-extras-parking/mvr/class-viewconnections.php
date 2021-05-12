@@ -18,7 +18,7 @@ class ViewConnections extends Shortcode {
 	/**
 	 * Install the shortcode
 	 */
-	public function install() {
+	public function runtime() {
 		\add_filter( 'wcmp_vendor_store_header_hide_store_email', array( $this, 'wcmp_vendor_store_header_custom_hide_email' ) );
 
 		$this->add_shortcode( 'vstaffview', array( $this, 'view_staff' ) );

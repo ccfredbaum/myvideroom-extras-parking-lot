@@ -11,7 +11,7 @@ use MyVideoRoomExtrasParking\Core\MenuHelpers;
 use MyVideoRoomExtrasParking\Core\SiteDefaults;
 use MyVideoRoomExtrasParking\Factory;
 use MyVideoRoomExtrasParking\Modules\UltimateMembershipPro\MembershipLevel;
-use \MyVideoRoomExtrasPlugin\Library\UserRoles;
+use \MyVideoRoomExtrasPlugin\Modules\Core\Library\UserRoles;
 use \MyVideoRoomExtrasPlugin\Library\SectionTemplates;
 use MyVideoRoomExtrasParking\Library\WordPressUser;
 use MyVideoRoomExtrasParking\Shortcode as Shortcode;
@@ -30,7 +30,7 @@ class PageSwitches extends Shortcode {
 	/**
 	 * Install the shortcode
 	 */
-	public function install() {
+	public function runtime() {
 		$this->add_shortcode( 'mvrswitch', array( $this, 'mvr_switch_shortcode' ) );
 		$this->add_shortcode( 'productpage', array( $this, 'call_product_page_shortcode' ) );
 		$this->add_shortcode( 'loginswitch', array( $this, 'login_switch_shortcode' ) );

@@ -40,8 +40,7 @@ class SiteDefaults extends Shortcode {
 	const TABLE_NAME_MODULE_CONFIG         = 'myvideoroom_extras_module_config';
 	const TABLE_NAME_ROOM_MAP              = 'myvideoroom_extras_room_post_mapping';
 	const TABLE_NAME_USER_VIDEO_PREFERENCE = 'myvideoroom_extras_user_video_preference';
-	const TABLE_NAME_SECURITY_CONFIG       = 'myvideoroom_extras_security_config';
-
+	
 	// Module Names and IDs.
 	const MODULE_DEFAULT_VIDEO_NAME = 'default-video-module';
 	const MODULE_DEFAULT_VIDEO_ID   = 1;
@@ -61,21 +60,14 @@ class SiteDefaults extends Shortcode {
 	const MODULE_TEMPLATES_NAME = 'templates-module';
 	const MODULE_TEMPLATES_ID   = 7;
 
-	const MODULE_SECURITY_NAME       = 'security-module';
-	const MODULE_SECURITY_ID         = 10;
-	const MODULE_SECURITY_ADMIN_PAGE = 'admin-settings-security';
-	const MODULE_SECURITY_DISPLAY    = 'Room Security';
-
-
 	/**
 	 * Install the shortcodes
 	 */
-	public function install() {
+	public function runtime() {
 		$this->add_shortcode( 'display', array( $this, 'display_defaults' ) );
 		$this->add_shortcode( 'pageowner', array( $this, 'page_owner' ) );
 	}
 
-	
 	/**
 	 * Determines premium users versus normal
 	 * This is used for both members and guests and switches room permissions and options seamlessly

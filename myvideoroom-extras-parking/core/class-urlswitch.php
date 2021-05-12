@@ -24,7 +24,7 @@ class URLSwitch extends Shortcode {
 	/**
 	 * Install the shortcode
 	 */
-	public function install() {
+	public function runtime() {
 		// A Shortcode to Return URL Sequences for Menus
 		// This is meant to be the new universal formatting invite list
 
