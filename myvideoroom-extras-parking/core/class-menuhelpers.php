@@ -105,6 +105,34 @@ class MenuHelpers extends Shortcode {
 	}
 
 	/**
+	 * A Function to Return the User Nicename for menus
+	 *
+	 * @param integer $user_id
+	 *
+	 * @return string
+	 */
+	public function nice_name( int $user_id = null ): string {
+
+		if ( $user_id ) {
+			$user = $this->get_instance( WordPressUser::class )->get_wordpress_user_by_id( $user_id );
+		} else {
+			$user = \wp_get_current_user();
+		}
+
+		return $user->user_nicename;
+	}
+
+	/**
+	 * Get the nice name for a user from a shortcode
+	 *
+	 * @return string
+	 */
+	public function nice_name_shortcode(): string {
+		return $this->nice_name();
+	}
+
+
+	/**
 	 * A Function to Correctly Render Pictures for Store Owners, Staff, and Users Being Viewed by Visitors
 	 *
 	 * @param string $inbound_image
@@ -158,33 +186,6 @@ class MenuHelpers extends Shortcode {
 			return "'s ";
 		}
 
-	}
-
-	/**
-	 * A Function to Return the User Nicename for menus
-	 *
-	 * @param integer $user_id
-	 *
-	 * @return string
-	 */
-	public function nice_name( int $user_id = null ): string {
-
-		if ( $user_id ) {
-			$user = $this->get_instance( WordPressUser::class )->get_wordpress_user_by_id( $user_id );
-		} else {
-			$user = \wp_get_current_user();
-		}
-
-		return $user->user_nicename;
-	}
-
-	/**
-	 * Get the nice name for a user from a shortcode
-	 *
-	 * @return string
-	 */
-	public function nice_name_shortcode(): string {
-		return $this->nice_name();
 	}
 
 	/**
