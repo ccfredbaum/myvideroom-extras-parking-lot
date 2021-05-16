@@ -16,7 +16,7 @@ use MyVideoRoomExtrasParking\Shortcode as Shortcode;
 class ViewConnections extends Shortcode {
 
 	/**
-	 * Install the shortcode
+	 * Provide Runtime
 	 */
 	public function runtime() {
 		\add_filter( 'wcmp_vendor_store_header_hide_store_email', array( $this, 'wcmp_vendor_store_header_custom_hide_email' ) );

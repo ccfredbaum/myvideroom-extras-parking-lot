@@ -61,7 +61,7 @@ class SiteDefaults extends Shortcode {
 	const MODULE_TEMPLATES_ID   = 7;
 
 	/**
-	 * Install the shortcodes
+	 * Provide Runtime
 	 */
 	public function runtime() {
 		$this->add_shortcode( 'display', array( $this, 'display_defaults' ) );

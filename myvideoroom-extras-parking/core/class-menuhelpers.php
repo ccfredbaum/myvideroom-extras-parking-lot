@@ -20,7 +20,7 @@ class MenuHelpers extends Shortcode {
 
 
 	/**
-	 * Install the shortcode
+	 * Provide Runtime
 	 */
 	public function runtime() {
 		$this->add_shortcode( 'bpdisplayname', array( $this, 'get_bp_displayname' ) );

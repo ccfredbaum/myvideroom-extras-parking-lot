@@ -28,7 +28,7 @@ class PageSwitches extends Shortcode {
 
 
 	/**
-	 * Install the shortcode
+	 * Provide Runtime
 	 */
 	public function runtime() {
 		$this->add_shortcode( 'mvrswitch', array( $this, 'mvr_switch_shortcode' ) );

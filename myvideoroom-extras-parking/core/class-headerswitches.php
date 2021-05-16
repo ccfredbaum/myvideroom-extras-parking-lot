@@ -22,7 +22,7 @@ use MyVideoRoomExtrasPlugin\Modules\WooCommerceBookings\WCHelpers;
 class HeaderSwitches extends Shortcode {
 
 	/**
-	 * Install the shortcode
+	 * Provide Runtime
 	 */
 	public function runtime() {
 		$this->add_shortcode( 'storeheader', array( $this, 'store_header_monitor_shortcode' ) );

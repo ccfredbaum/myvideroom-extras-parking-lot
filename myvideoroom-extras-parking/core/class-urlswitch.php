@@ -22,7 +22,7 @@ class URLSwitch extends Shortcode {
 
 
 	/**
-	 * Install the shortcode
+	 * Provide Runtime
 	 */
 	public function runtime() {
 		// A Shortcode to Return URL Sequences for Menus
