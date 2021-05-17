@@ -11,7 +11,7 @@ use MyVideoRoomExtrasParking\Core\MenuHelpers;
 use MyVideoRoomExtrasParking\Core\SiteDefaults;
 use MyVideoRoomExtrasParking\Factory;
 use MyVideoRoomExtrasParking\Modules\UltimateMembershipPro\MembershipLevel;
-use \MyVideoRoomPlugin\Core\Library\UserRoles;
+use \MyVideoRoomPlugin\Library\UserRoles;
 use \MyVideoRoomExtrasPlugin\Library\SectionTemplates;
 use MyVideoRoomExtrasParking\Library\WordPressUser;
 use MyVideoRoomExtrasParking\Shortcode as Shortcode;
