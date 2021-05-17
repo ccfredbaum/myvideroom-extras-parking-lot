@@ -26,7 +26,7 @@ class Activation {
 	/**
 	 * Remove the plugin
 	 */
-	public static function unruntime() {
+	public static function uninit() {
 	
 	}
 }

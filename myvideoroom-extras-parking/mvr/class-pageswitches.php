@@ -30,7 +30,7 @@ class PageSwitches extends Shortcode {
 	/**
 	 * Provide Runtime
 	 */
-	public function runtime() {
+	public function init() {
 		$this->add_shortcode( 'mvrswitch', array( $this, 'mvr_switch_shortcode' ) );
 		$this->add_shortcode( 'productpage', array( $this, 'call_product_page_shortcode' ) );
 		$this->add_shortcode( 'loginswitch', array( $this, 'login_switch_shortcode' ) );

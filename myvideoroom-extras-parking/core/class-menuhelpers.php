@@ -22,7 +22,7 @@ class MenuHelpers extends Shortcode {
 	/**
 	 * Provide Runtime
 	 */
-	public function runtime() {
+	public function init() {
 		$this->add_shortcode( 'bpdisplayname', array( $this, 'get_bp_displayname' ) );
 		$this->add_shortcode( 'storebutton', array( $this, 'store_button_shortcode' ) );
 		$this->add_shortcode( 'vsslug', array( $this, 'vs_slug_shortcode' ) );

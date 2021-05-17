@@ -24,7 +24,7 @@ class HeaderSwitches extends Shortcode {
 	/**
 	 * Provide Runtime
 	 */
-	public function runtime() {
+	public function init() {
 		$this->add_shortcode( 'storeheader', array( $this, 'store_header_monitor_shortcode' ) );
 	}
 

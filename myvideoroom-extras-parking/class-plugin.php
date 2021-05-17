@@ -25,9 +25,9 @@ class Plugin {
 	 */
 	public function __construct() {
 		echo 'in constructor of plugin class';
-		Factory::get_instance( PageSwitches::class )->runtime();
-		Factory::get_instance( MenuHelpers::class )->runtime();
-		Factory::get_instance( URLSwitch::class )->runtime();
+		Factory::get_instance( PageSwitches::class )->init();
+		Factory::get_instance( MenuHelpers::class )->init();
+		Factory::get_instance( URLSwitch::class )->init();
 
 	}
 

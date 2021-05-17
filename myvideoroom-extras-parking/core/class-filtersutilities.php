@@ -16,7 +16,7 @@ class FiltersUtilities extends Shortcode {
 	/**
 	 * Provide Runtime
 	 */
-	public function runtime() {
+	public function init() {
 
 		/*
 		Customise My Account Page.

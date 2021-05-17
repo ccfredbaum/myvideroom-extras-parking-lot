@@ -63,7 +63,7 @@ class SiteDefaults extends Shortcode {
 	/**
 	 * Provide Runtime
 	 */
-	public function runtime() {
+	public function init() {
 		$this->add_shortcode( 'display', array( $this, 'display_defaults' ) );
 		$this->add_shortcode( 'pageowner', array( $this, 'page_owner' ) );
 	}
