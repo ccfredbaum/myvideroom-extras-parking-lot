@@ -37,9 +37,9 @@ class SiteDefaults extends Shortcode {
 	const USER_ID_SITE_DEFAULTS = 1;
 
 	// Default Database Table Names.
-	const TABLE_NAME_MODULE_CONFIG         = 'myvideoroom_extras_module_config';
-	const TABLE_NAME_ROOM_MAP              = 'myvideoroom_extras_room_post_mapping';
-	const TABLE_NAME_USER_VIDEO_PREFERENCE = 'myvideoroom_extras_user_video_preference';
+	const TABLE_NAME_MODULE_CONFIG         = 'myvideoroom_module_config';
+	const TABLE_NAME_ROOM_MAP              = 'myvideoroom_room_post_mapping';
+	const TABLE_NAME_USER_VIDEO_PREFERENCE = 'myvideoroom_user_video_preference';
 	
 	// Module Names and IDs.
 	const MODULE_DEFAULT_VIDEO_NAME = 'default-video-module';
