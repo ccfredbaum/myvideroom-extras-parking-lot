@@ -81,10 +81,10 @@ class WooCommerceBookingsViews extends Shortcode {
 			}
 		</script>
 		<ul class="menu">
-			<a class="cc-menu-header" href="javascript:activateTab( 'page1' )"><?php echo esc_html__( 'Video Booking', 'my-video-room' ); ?></a>
-			<a class="cc-menu-header" href="javascript:activateTab( 'page2' )"><?php echo esc_html__( 'Join Meeting', 'my-video-room' ); ?></a>
-			<a class="cc-menu-header" href="javascript:activateTab( 'page3' )"><?php echo esc_html__( 'Host a Meeting', 'my-video-room' ); ?></a>
-			<a class="cc-menu-header" href="javascript:activateTab( 'page4' )"><?php echo esc_html__( 'Host Settings', 'my-video-room' ); ?></a>
+			<a class="cc-menu-header" href="javascript:activateTab( 'page1' )"><?php esc_html_e( 'Video Booking', 'my-video-room' ); ?></a>
+			<a class="cc-menu-header" href="javascript:activateTab( 'page2' )"><?php esc_html_e( 'Join Meeting', 'my-video-room' ); ?></a>
+			<a class="cc-menu-header" href="javascript:activateTab( 'page3' )"><?php esc_html_e( 'Host a Meeting', 'my-video-room' ); ?></a>
+			<a class="cc-menu-header" href="javascript:activateTab( 'page4' )"><?php esc_html_e( 'Host Settings', 'my-video-room' ); ?></a>
 		</ul>
 		<div id="tabCtrl">
 			<div id="page1" style="display: block;">
@@ -151,7 +151,7 @@ class WooCommerceBookingsViews extends Shortcode {
 		wp_enqueue_style( 'cc-booking-ctr', plugins_url( '/stylesheets/booking-ctr.css', __FILE__ ) );
 		?>
 		<div class="mvr-row">
-			<h2 class="mvr-reception-header"><?php echo esc_html__( 'Please Enter Your Booking Number ', 'my-video-room' ); ?></h2>
+			<h2 class="mvr-reception-header"><?php esc_html_e( 'Please Enter Your Booking Number ', 'my-video-room' ); ?></h2>
 
 			<table style="width:100%">
 				<tr>
@@ -170,9 +170,9 @@ class WooCommerceBookingsViews extends Shortcode {
 										" alt="Site Logo"></th>
 					<th>
 						<form action="">
-							<label for="host"><?php echo esc_html__( 'My Booking Number:', 'my-video-room' ); ?> </label>
+							<label for="host"><?php esc_html_e( 'My Booking Number:', 'my-video-room' ); ?> </label>
 							<input type="text" id="booking" name="booking">
-							<p class="cc-title-label"><?php echo esc_html__( 'This is the number you received when making your booking, check email and purchase confirmation details (and Junk Mail folder) ', 'my-video-room' ); ?></p>
+							<p class="cc-title-label"><?php esc_html_e( 'This is the number you received when making your booking, check email and purchase confirmation details (and Junk Mail folder) ', 'my-video-room' ); ?></p>
 							<input type="submit" value="Submit">
 						</form>
 
@@ -212,9 +212,9 @@ class WooCommerceBookingsViews extends Shortcode {
 			}
 		</script>
 		<ul class="menu">
-			<a class="cc-menu-header" href="javascript:activateTab( 'page1' )"><?php echo esc_html__( 'Video Booking', 'my-video-room' ); ?></a>
-			<a class="cc-menu-header" href="javascript:activateTab( 'page2' )"<?php echo esc_html__( 'Meet', 'my-video-room' ); ?>></a>
-			<a class="cc-menu-header" href="javascript:activateTab( 'page3' )"><?php echo esc_html__( 'Sign In', 'my-video-room' ); ?></a>
+			<a class="cc-menu-header" href="javascript:activateTab( 'page1' )"><?php esc_html_e( 'Video Booking', 'my-video-room' ); ?></a>
+			<a class="cc-menu-header" href="javascript:activateTab( 'page2' )"<?php esc_html_e( 'Meet', 'my-video-room' ); ?>></a>
+			<a class="cc-menu-header" href="javascript:activateTab( 'page3' )"><?php esc_html_e( 'Sign In', 'my-video-room' ); ?></a>
 		</ul>
 		<div id="tabCtrl">
 			<div id="page1" style="display: block;">
