@@ -9,7 +9,7 @@
 namespace MyVideoRoomExtrasParking\Library;
 
 use MyVideoRoomExtrasPlugin\Core\SiteDefaults;
-use \MyVideoRoomExtrasPlugin\Core\VideoHelpers;
+use \MyVideoRoomExtrasPlugin\Library\VideoHelpers;
 use MyVideoRoomExtrasParking\Factory;
 use MyVideoRoomExtrasParking\Shortcode as Shortcode;
 

@@ -9,7 +9,7 @@ namespace MyVideoRoomExtrasPlugin\Modules\WooCommerceBookings;
 
 use MyVideoRoomExtrasPlugin\Shortcode as Shortcode;
 use \MyVideoRoomPlugin\Core\SiteDefaults;
-use MyVideoRoomPlugin\Core\VideoHelpers;
+use MyVideoRoomPlugin\Library\VideoHelpers;
 use MyVideoRoomPlugin\Core\Entity\UserVideoPreference;
 use MyVideoRoomExtrasPlugin\Factory;
 use MyVideoRoomExtrasPlugin\Modules\MVRPersonalMeeting\MVRPersonalMeeting;
