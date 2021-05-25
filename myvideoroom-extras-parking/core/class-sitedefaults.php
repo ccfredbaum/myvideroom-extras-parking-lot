@@ -20,7 +20,7 @@ use MyVideoRoomExtrasParking\Library\MeetingIdGenerator;
 /**
  * Class SiteDefaults
  */
-class SiteDefaults extends Shortcode {
+class SiteDefaults {
 
 	// All Up Site Default Master Setting.
 	const ROOM_NAME_SITE_DEFAULT = 'site-default-settings';
@@ -64,8 +64,8 @@ class SiteDefaults extends Shortcode {
 	 * Provide Runtime
 	 */
 	public function init() {
-		$this->add_shortcode( 'display', array( $this, 'display_defaults' ) );
-		$this->add_shortcode( 'pageowner', array( $this, 'page_owner' ) );
+		add_shortcode( 'display', array( $this, 'display_defaults' ) );
+		add_shortcode( 'pageowner', array( $this, 'page_owner' ) );
 	}
 
 	/**

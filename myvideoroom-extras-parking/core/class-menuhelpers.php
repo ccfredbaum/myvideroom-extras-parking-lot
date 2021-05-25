@@ -16,29 +16,29 @@ use \MyVideoRoomExtrasPlugin\Modules\WCFM\WCFMHelpers;
 /**
  * Class MenuHelpers
  */
-class MenuHelpers extends Shortcode {
+class MenuHelpers {
 
 
 	/**
 	 * Provide Runtime
 	 */
 	public function init() {
-		$this->add_shortcode( 'bpdisplayname', array( $this, 'get_bp_displayname' ) );
-		$this->add_shortcode( 'storebutton', array( $this, 'store_button_shortcode' ) );
-		$this->add_shortcode( 'vsslug', array( $this, 'vs_slug_shortcode' ) );
-		$this->add_shortcode( 'marketplaceurl', array( $this, 'marketplace_url_shortcode' ) );
-		$this->add_shortcode( 'profileurl', array( $this, 'profile_url_shortcode' ) );
-		$this->add_shortcode( 'videostorefrontbutton', array( $this, 'video_storefront_button_shortcode' ) );
-		$this->add_shortcode( 'nicename', array( $this, 'nice_name_shortcode' ) );
-		$this->add_shortcode( 'invitedisplay', array( $this, 'invite_display_shortcode' ) );
-		$this->add_shortcode( 'menuname', array( $this, 'menu_name' ) );
-		$this->add_shortcode( 'name', array( $this, 'get_name_shortcode' ) );
-		$this->add_shortcode( 'menulink', array( $this, 'menu_link_shortcode' ) );
-		$this->add_shortcode( 'storevisitor', array( $this, 'store_visitor_shortcode' ) );
-		$this->add_shortcode( 'namedump', array( $this, 'name_dump_shortcode' ) );
-		$this->add_shortcode( 'refresh', array( $this, 'refresh' ) );
-		$this->add_shortcode( 'nameformat', array( $this, 'name_format_sc' ) );
-		$this->add_shortcode( 'searchyouzergroups', array( $this, 'search_youzer_groups_shortcode' ) );
+		add_shortcode( 'bpdisplayname', array( $this, 'get_bp_displayname' ) );
+		add_shortcode( 'storebutton', array( $this, 'store_button_shortcode' ) );
+		add_shortcode( 'vsslug', array( $this, 'vs_slug_shortcode' ) );
+		add_shortcode( 'marketplaceurl', array( $this, 'marketplace_url_shortcode' ) );
+		add_shortcode( 'profileurl', array( $this, 'profile_url_shortcode' ) );
+		add_shortcode( 'videostorefrontbutton', array( $this, 'video_storefront_button_shortcode' ) );
+		add_shortcode( 'nicename', array( $this, 'nice_name_shortcode' ) );
+		add_shortcode( 'invitedisplay', array( $this, 'invite_display_shortcode' ) );
+		add_shortcode( 'menuname', array( $this, 'menu_name' ) );
+		add_shortcode( 'name', array( $this, 'get_name_shortcode' ) );
+		add_shortcode( 'menulink', array( $this, 'menu_link_shortcode' ) );
+		add_shortcode( 'storevisitor', array( $this, 'store_visitor_shortcode' ) );
+		add_shortcode( 'namedump', array( $this, 'name_dump_shortcode' ) );
+		add_shortcode( 'refresh', array( $this, 'refresh' ) );
+		add_shortcode( 'nameformat', array( $this, 'name_format_sc' ) );
+		add_shortcode( 'searchyouzergroups', array( $this, 'search_youzer_groups_shortcode' ) );
 	}
 
 	/**

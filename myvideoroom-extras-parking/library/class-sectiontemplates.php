@@ -17,7 +17,7 @@ use MyVideoRoomExtrasParking\Shortcode as Shortcode;
 /**
  * Class SectionTemplate
  */
-class SectionTemplates extends Shortcode {
+class SectionTemplates {
 
 	/**
 	 * Render MVR Specific Upgrade Template - will become the basis for a UMP Module - so include in plugin v1+

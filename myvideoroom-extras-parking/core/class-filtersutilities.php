@@ -9,7 +9,7 @@ use MyVideoRoomExtrasPlugin\Core\SiteDefaults;
 /**
  * Class FiltersUtilities
  */
-class FiltersUtilities extends Shortcode {
+class FiltersUtilities {
 
 
 
@@ -38,7 +38,7 @@ class FiltersUtilities extends Shortcode {
 
 		\add_filter( 'woocommerce_my_account_my_orders_actions', array( $this, 'add_my_account_order_actions_filter' ), 10, 2 );
 
-		$this->add_shortcode( 'menu', array( $this, 'menu' ) );
+		add_shortcode( 'menu', array( $this, 'menu' ) );
 
 		// Action Filters to Implement a Video Hub system in WCFM Elementor to deploy a video consult room
 		// WCFM Template to Implement Video Hub Tabbed menu
@@ -171,8 +171,8 @@ class FiltersUtilities extends Shortcode {
 		
 		\add_filter( 'big_image_size_threshold', '__return_false' );
 
-		//$this->add_shortcode( 'debughook', array( $this, 'debug_hook' ) );
-		$this->add_shortcode( 'logout', array( $this, 'logout' ) );
+		//add_shortcode( 'debughook', array( $this, 'debug_hook' ) );
+		add_shortcode( 'logout', array( $this, 'logout' ) );
 	}
 
 	/**

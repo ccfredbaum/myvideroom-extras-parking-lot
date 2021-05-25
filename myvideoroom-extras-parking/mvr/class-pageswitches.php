@@ -24,25 +24,25 @@ ob_start();
 /**
  * Class PageSwitches
  */
-class PageSwitches extends Shortcode {
+class PageSwitches {
 
 
 	/**
 	 * Provide Runtime
 	 */
 	public function init() {
-		$this->add_shortcode( 'mvrswitch', array( $this, 'mvr_switch_shortcode' ) );
-		$this->add_shortcode( 'productpage', array( $this, 'call_product_page_shortcode' ) );
-		$this->add_shortcode( 'loginswitch', array( $this, 'login_switch_shortcode' ) );
-		$this->add_shortcode( 'registerswitch', array( $this, 'register_switch_shortcode' ) );
-		$this->add_shortcode( 'chgpwdswitch', array( $this, 'change_password_switch_shortcode' ) );
-		$this->add_shortcode( 'templateswitch', array( $this, 'post_template_switch_shortcode' ) );
-		$this->add_shortcode( 'loungeswitch', array( $this, 'lounge_switch_shortcode' ) );
+		add_shortcode( 'mvrswitch', array( $this, 'mvr_switch_shortcode' ) );
+		add_shortcode( 'productpage', array( $this, 'call_product_page_shortcode' ) );
+		add_shortcode( 'loginswitch', array( $this, 'login_switch_shortcode' ) );
+		add_shortcode( 'registerswitch', array( $this, 'register_switch_shortcode' ) );
+		add_shortcode( 'chgpwdswitch', array( $this, 'change_password_switch_shortcode' ) );
+		add_shortcode( 'templateswitch', array( $this, 'post_template_switch_shortcode' ) );
+		add_shortcode( 'loungeswitch', array( $this, 'lounge_switch_shortcode' ) );
 		
-		$this->add_shortcode( 'findswitch', array( $this, 'find_switch_shortcode' ) );
-		$this->add_shortcode( 'accountctrswitch', array( $this, 'account_center_switch_shortcode' ) );
-		$this->add_shortcode( 'lobbyswitch', array( $this, 'lobby_switch_shortcode' ) );
-		$this->add_shortcode( 'staffswitch', array( $this, 'staff_switch_shortcode' ) );
+		add_shortcode( 'findswitch', array( $this, 'find_switch_shortcode' ) );
+		add_shortcode( 'accountctrswitch', array( $this, 'account_center_switch_shortcode' ) );
+		add_shortcode( 'lobbyswitch', array( $this, 'lobby_switch_shortcode' ) );
+		add_shortcode( 'staffswitch', array( $this, 'staff_switch_shortcode' ) );
 
 	}
 

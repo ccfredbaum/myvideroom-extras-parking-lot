@@ -18,7 +18,7 @@ use MyVideoRoomExtrasPlugin\Modules\WCFM\WCFMHelpers;
 /**
  * Class URLSwitch
  */
-class URLSwitch extends Shortcode {
+class URLSwitch {
 
 
 	/**
@@ -32,7 +32,7 @@ class URLSwitch extends Shortcode {
 
 		// Main Function
 
-		$this->add_shortcode( 'nameurl', array( $this, 'get_name_url_shortcode' ) );
+		add_shortcode( 'nameurl', array( $this, 'get_name_url_shortcode' ) );
 	}
 
 	public function get_name_url( $pre, $type, $post ) {

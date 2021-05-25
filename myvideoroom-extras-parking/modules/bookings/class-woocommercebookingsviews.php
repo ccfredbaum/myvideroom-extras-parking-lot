@@ -18,7 +18,7 @@ use MyVideoRoomExtrasPlugin\Modules\MVRPersonalMeeting\Library\MVRPersonalMeetin
 /**
  * Class WooCommerceBookingsViews - Renders the Video Views and Templates for WooCommerce Bookings.
  */
-class WooCommerceBookingsViews extends Shortcode {
+class WooCommerceBookingsViews {
 
 	/**
 	 * Render form when no booking is found

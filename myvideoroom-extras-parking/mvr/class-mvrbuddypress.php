@@ -19,7 +19,7 @@ use MyVideoRoomExtrasParking\Modules\BuddyPress\BuddyPressVideo;
 /**
  * Class BuddyPress
  */
-class MVRBuddyPress extends Shortcode {
+class MVRBuddyPress {
 
 
 
@@ -37,8 +37,8 @@ class MVRBuddyPress extends Shortcode {
 		 * Example - if the tab above has cc_group_video_meeting_content as the screen function - the rendering function cc_group_video_meeting_content must be built below for the tab to render content
 		 */
 
-		$this->add_shortcode( 'bpgroupname', array( $this, 'bp_groupname_shortcode' ) );
-		$this->add_shortcode( 'displayportfolio', array( $this, 'display_portfolio_shortcode' ) );
+		add_shortcode( 'bpgroupname', array( $this, 'bp_groupname_shortcode' ) );
+		add_shortcode( 'displayportfolio', array( $this, 'display_portfolio_shortcode' ) );
 	}
 
 
